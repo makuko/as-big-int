@@ -1,0 +1,40 @@
+{
+  "name": "as-big-int",
+  "version": "0.0.0",
+  "description": "Arbitrary precision library for AssemblyScript",
+  "author": "Markus Schmidt <markus.schmidt.84@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "scripts": {
+    "asbuild:test": "asc assembly/test.ts --target test --exportRuntime",
+    "asbuild:benchmark": "asc assembly/benchmark.ts --target benchmark",
+    "asbuild:playground": "asc assembly/playground.ts --target playground",
+    "asbuild": "npm run asbuild:test && npm run asbuild:benchmark",
+    "test": "ts-node node_modules/mocha/bin/mocha test/*.test.ts",
+    "benchmark:catalan": "node benchmarks/catalan",
+    "benchmark:factorial": "node benchmarks/factorial",
+    "benchmark:fibonacci": "node benchmarks/fibonacci",
+    "benchmark:multiply": "node benchmarks/multiply",
+    "benchmark:divide": "node benchmarks/divide",
+    "benchmark:shift": "node benchmarks/shift",
+    "benchmark:convert-10": "node benchmarks/convert-10",
+    "benchmark:convert-16": "node benchmarks/convert-16"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.7.11",
+    "assemblyscript": "^0.21.1",
+    "benchmark": "^2.1.4",
+    "bn.js": "^5.2.1",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.9.1"
+  }
+}

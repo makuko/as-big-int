@@ -1,0 +1,46 @@
+# as-big-int
+
+## Installation
+
+```sh
+npm install as-big-int
+```
+
+## API
+
+### Import and instantiation
+
+```ts
+import { BigInt, bigInt } from 'as-big-int/assembly';
+
+// Generic approach
+let x: BigInt = bigInt(); // 0
+let y: BigInt = bigInt(4711);
+let z: BigInt = bigInt('4711');
+
+x = BigInt.fromInt(0);
+y = BigInt.fromString('4711');
+z = BigInt.fromString('1267', 16);
+```
+
+### Arithmetic
+
+```ts
+// New instance
+const opp = bigInt().neg(x);
+const abs = bigInt().abs(x);
+const sum = bigInt().add(y, x);
+const diff = bigInt().sub(y, x);
+const prod = bigInt().mul(y, x);
+const quot = bigInt().div(y, x);
+const rem = bigInt().mod(y, x);
+
+// Inplace
+const opp = x.neg();
+const abs = x.abs();
+const sum = x.add(y);
+const diff = x.sub(y);
+const prod = x.mul(y);
+const quot = x.div(y);
+const rem = x.mod(y);
+```

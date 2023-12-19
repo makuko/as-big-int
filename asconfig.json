@@ -1,0 +1,28 @@
+{
+  "targets": {
+    "test": {
+      "outFile": "build/test.wasm",
+      "textFile": "build/test.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "playground": {
+      "outFile": "build/playground.wasm",
+      "textFile": "build/playground.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "benchmark": {
+      "outFile": "build/benchmark.wasm",
+      "textFile": "build/benchmark.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}
